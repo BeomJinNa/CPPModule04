@@ -3,6 +3,8 @@
 
 Brain::Brain(void)
 {
+	for (int i = 0; i < 100; ++i)
+		ideas[i] = "Sample Idea " + std::to_string(i);
 	std::cout << "A brain has been created." << std::endl;
 }
 
@@ -10,7 +12,7 @@ Brain::Brain(const Brain& source)
 {
 	for (int i = 0; i < 100; ++i)
 		ideas[i] = source.ideas[i];
-	std::cout << "A animal has been created." << std::endl;
+	std::cout << "A brain has been created." << std::endl;
 }
 
 Brain&	Brain::operator=(const Brain& source)

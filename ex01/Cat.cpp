@@ -4,16 +4,14 @@
 Cat::Cat(void)
 {
 	mType = "Cat";
-	mSound = "Meow~";
 	brain = new Brain();
-	std::cout << "An cat has been created." << std::endl;
+	std::cout << "A cat has been created." << std::endl;
 }
 
 Cat::Cat(const Cat& source)
 	: Animal(source)
 {
 	mType = "Cat";
-	mSound = "Meow~";
 	brain = new Brain();
 	*brain = *source.brain;
 	std::cout << "A cat has been created." << std::endl;
@@ -25,7 +23,7 @@ Cat&	Cat::operator=(const Cat& source)
 	{
 		Animal::operator=(source);
 		*brain = *source.brain;
-		std::cout << "An cat has been copied." << std::endl;
+		std::cout << "A cat has been copied." << std::endl;
 	}
 
 	return (*this);
@@ -34,6 +32,15 @@ Cat&	Cat::operator=(const Cat& source)
 Cat::~Cat(void)
 {
 	delete brain;
-	std::cout << "An cat has been removed." << std::endl;
+	std::cout << "A cat has been removed." << std::endl;
 }
 
+void	Cat::makeSound(void) const
+{
+	std::cout << "Meow~" << std::endl;
+}
+
+const Brain*	Cat::getBrain(void) const
+{
+	return (brain);
+}
