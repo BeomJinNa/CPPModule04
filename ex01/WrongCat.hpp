@@ -11,6 +11,5 @@ class WrongCat : public WrongAnimal
 		WrongCat(const WrongCat& source);
 		WrongCat&	operator=(const WrongCat& source);
 		~WrongCat(void);
-		void		makeSound(void) const;
 };
 #endif
