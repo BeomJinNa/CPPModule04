@@ -1,7 +1,8 @@
+#include <iostream>
 #include "Character.hpp"
 
-t_list*	Character::start = nullptr;
-t_list*	Character::last = nullptr;
+List*	Character::start = nullptr;
+List*	Character::last = nullptr;
 
 Character::Character(void)
 	: mNumberOfItems(0)
@@ -57,20 +58,24 @@ const std::string&	Character::getName(void) const
 void	Character::equip(AMateria* m)
 {
 	if (mNumberOfItems >= 4 || m == nullptr)
+	{
+		std::cout << "can not equip (inventory is full OR the Materia is null)" << std::endl;
 		return ;
+	}
 	mInventory[mNumberOfItems] = m;
+	std::cout << mInventory[mNumberOfItems]->getType() << " equiped" << std::endl;
 	++mNumberOfItems;
 }
 
 void	Character::unequip(int idx)
 {
-	t_list*	ground;
+	List*	ground;
 
 	if (idx < 0 || idx >= mNumberOfItems)
 		return ;
 
 	--mNumberOfItems;
-	ground = new t_list;
+	ground = new List;
 	ground->next = nullptr;
 	ground->materia = mInventory[mNumberOfItems];
 	if (last != nullptr)
@@ -91,8 +96,8 @@ void	Character::use(int idx, ICharacter& target)
 
 void	Character::clearUnequiped(void)
 {
-	t_list*	ptr;
-	t_list*	next;
+	List*	ptr;
+	List*	next;
 
 	ptr = start;
 	while (ptr != nullptr)

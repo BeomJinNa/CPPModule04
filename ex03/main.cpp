@@ -1,3 +1,4 @@
+#include <iostream>
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
@@ -26,8 +27,14 @@ int main()
 
 	ICharacter*		bob = new Character("bob");
 
+	std::cout << "\nuse skill slot 0" << std::endl;
 	me->use(0, *bob);
+	std::cout << "\nuse skill slot 1" << std::endl;
 	me->use(1, *bob);
+	std::cout << "\nuse skill slot 2" << std::endl;
+	me->use(2, *bob);
+	std::cout << "\nuse skill slot 3" << std::endl;
+	me->use(3, *bob);
 
 	Character::clearUnequiped();
 

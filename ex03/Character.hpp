@@ -3,7 +3,12 @@
 
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
-# include "List.hpp"
+
+struct List
+{
+	AMateria*		materia;
+	List*			next;
+};
 
 class Character : public ICharacter
 {
@@ -25,7 +30,7 @@ class Character : public ICharacter
 		int					mNumberOfItems;
 		AMateria*			mInventory[4];
 		static int			unequiped;
-		static t_list*		start;
-		static t_list*		last;
+		static List*		start;
+		static List*		last;
 };
 #endif

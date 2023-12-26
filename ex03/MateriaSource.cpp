@@ -1,6 +1,4 @@
 #include "MateriaSource.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
 
 MateriaSource::MateriaSource(void)
 	: mNumberOfMateria(0)

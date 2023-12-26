@@ -1,4 +1,3 @@
-#include <iostream>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
